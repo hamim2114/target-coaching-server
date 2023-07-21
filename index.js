@@ -105,8 +105,7 @@ app.post('/api/delete', async (req, res) => {
 });
 
 app.use('/api/auth', authRoute);
-// app.use('/api/blog', blogRoute);
-
+app.use('/api/blog', blogRoute);
 app.use('/api/course', courseRoute);
 app.use('/api/team', teamRoute);
 app.use('/api/gallery', galleryRoute);

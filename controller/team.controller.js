@@ -11,7 +11,7 @@ export const createTeam = async (req,res,next) => {
 };
 export const getTeams = async (req,res,next) => {
     try {
-      const teams = await teamModel.find();
+      const teams = await teamModel.find().sort({createdAt: -1});
       res.status(201).send(teams);
     } catch (error) {
       next(error)
