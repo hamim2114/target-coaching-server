@@ -5,12 +5,13 @@ import cors from 'cors';
 import {blogRoute} from './route/blog.route.js';
 import cookieParser from 'cookie-parser';
 import {authRoute} from './route/auth.route.js';
-import {jobRoute} from './route/job.route.js';
 import {teamRoute} from './route/team.route.js';
 import {galleryRoute} from './route/gallery.route.js';
 import {v2 as cloudinary} from 'cloudinary';
 import Multer from 'multer';
 import { courseRoute } from './route/course.route.js';
+import { noticeRoute } from './route/notice.route.js';
+import { eventRoute } from './route/event.route.js';
 
 const app = express();
 
@@ -105,13 +106,15 @@ app.post('/api/delete', async (req, res) => {
 });
 
 app.use('/api/auth', authRoute);
+app.use('/api/notice', noticeRoute);
 app.use('/api/blog', blogRoute);
 app.use('/api/course', courseRoute);
 app.use('/api/team', teamRoute);
+app.use('/api/event', eventRoute);
 app.use('/api/gallery', galleryRoute);
 
 app.use((err, req, res, next) => {
   const status = err.status || 500;
-  const message = err.message || 'Something went wrong!';
+  const message = err.message || 'Something went Wrong!';
   res.status(status).send(message);
 });
