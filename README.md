@@ -51,8 +51,7 @@
 | `body` | `string` | true |
 | `img` | `string` | false |
 | `imgId` | `string` | false |
-#### Cookies
-| `jwt` | `string` | true |
+#### Required jwt_token from Cookies
 
 #### Get All Blog Post
 
