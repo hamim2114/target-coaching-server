@@ -1,31 +1,30 @@
 
-# target-coaching-server
-
-
-
-## 🛠 Tech Used
-
-- Node JS
-- Express JS
-- MongoDB
-- Mongoose
-- Cloudinary
-- Jsonwebtoken
-- Multer
-- Nodemailer
-
-
 ## Some API Reference
 
-#### Post Blog Post
+#### For Login
 
 ```http
-  POST https://targetcoachingserver.vercel.app/api/blog/
+  POST https://targetcoachingserver.vercel.app/api/auth/login
 ```
 
 | Token | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `jwt_token` | `string` | **Required**. Json Web Token |
+| `api_token` | `string` | **Required**. API key |
+
+#### For Register
+```http
+  POST https://targetcoachingserver.vercel.app/api/auth/register
+```
+
+#### Publish Blog Post
+
+```http
+  POST https://targetcoachingserver.vercel.app/api/blog
+```
+
+| Token | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `jwt_token` | `string` | **Required** : Json Web Token from cookies |
 
 #### Get All Blog Post
 
@@ -33,9 +32,6 @@
   GET https://targetcoachingserver.vercel.app/api/blog
 ```
 
-| Parameter | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-|  | `string` | Get All Blog Post |
 
 #### Get Single Post
 
@@ -45,7 +41,7 @@
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required**. Id of item to fetch |
+| `id`      | `string` | **Required** : Id of item to fetch |
 
 
 
