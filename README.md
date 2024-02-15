@@ -1,4 +1,18 @@
 
+# target-coaching-server
+
+
+
+## 🛠 Tech Used
+
+- Node JS
+- Express JS
+- MongoDB
+- Mongoose
+- Cloudinary
+- Jsonwebtoken
+- Multer
+- Nodemailer
 ## Some API Reference
 
 #### For Login
@@ -6,11 +20,23 @@
 ```http
   POST https://targetcoachingserver.vercel.app/api/auth/login
 ```
+#### Body
+| _Key | _Type     | _Required                |
+| :-------- | :------- | :------------------------- |
+| `email` | `string` | true |
+| `password` | `string` | true |
 
 #### For Register
 ```http
   POST https://targetcoachingserver.vercel.app/api/auth/register
 ```
+#### Body
+| _Key | _Type     | _Required                |
+| :-------- | :------- | :------------------------- |
+| `name` | `string` | true |
+| `email` | `string` | true |
+| `password` | `string` | true |
+| `ruls` | `string` | true |
 
 #### Publish Blog Post
 
@@ -18,9 +44,15 @@
   POST https://targetcoachingserver.vercel.app/api/blog
 ```
 
-| Token | Type     | Description                |
+#### Body
+| _Key | _Type     | _Required                |
 | :-------- | :------- | :------------------------- |
-| `jwt_token` | `string` | **Required** : Json Web Token from cookies |
+| `title` | `string` | true |
+| `body` | `string` | true |
+| `img` | `string` | false |
+| `imgId` | `string` | false |
+#### Cookies
+| `jwt` | `string` | true |
 
 #### Get All Blog Post
 
@@ -32,12 +64,12 @@
 #### Get Single Post
 
 ```http
-  GET https://targetcoachingserver.vercel.app/api/blog/64ba52474d86dcc091091235
+  GET https://targetcoachingserver.vercel.app/api/blog/id
 ```
 
-| Parameter | Type     | Description                       |
+| _Parameter | _Type     | _Required                       |
 | :-------- | :------- | :-------------------------------- |
-| `id`      | `string` | **Required** : Id of item to fetch |
+| `id`      | `string` | true |
 
 
 
