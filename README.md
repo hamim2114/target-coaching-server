@@ -7,10 +7,6 @@
   POST https://targetcoachingserver.vercel.app/api/auth/login
 ```
 
-| Token | Type     | Description                |
-| :-------- | :------- | :------------------------- |
-| `api_token` | `string` | **Required**. API key |
-
 #### For Register
 ```http
   POST https://targetcoachingserver.vercel.app/api/auth/register
